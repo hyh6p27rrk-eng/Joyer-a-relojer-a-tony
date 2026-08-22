@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="joke-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="joke-wrapper">
+            <!-- Header -->
+            <div class="header">
+                <h1><i class="fas fa-laugh-beam"></i> Joke Generator</h1>
+                <p>Get instant laughs with random jokes!</p>
+            </div>
+
+            <!-- Joke Display -->
+            <div class="joke-box">
+                <div id="jokeContent" class="joke-content">
+                    <p>Click the button to get a random joke!</p>
+                </div>
+                <div id="jokeType" class="joke-type">
+                    <!-- Joke type will be displayed here -->
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Loading joke...</p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button id="newJokeBtn" class="btn btn-primary">
+                    <i class="fas fa-dice"></i> New Joke
+                </button>
+                <button id="copyBtn" class="btn btn-secondary">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+                <button id="shareBtn" class="btn btn-secondary">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <h3><i class="fas fa-filter"></i> Choose Category:</h3>
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="any">Any</button>
+                    <button class="category-btn" data-category="general">General</button>
+                    <button class="category-btn" data-category="programming">Programming</button>
+                    <button class="category-btn" data-category="knock-knock">Knock Knock</button>
+                </div>
+            </div>
+
+            <!-- Joke Counter -->
+            <div class="joke-stats">
+                <div class="stat">
+                    <i class="fas fa-laugh"></i>
+                    <span id="jokeCount">0</span>
+                    <p>Jokes Loaded</p>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-heart"></i>
+                    <span id="favoriteCount">0</span>
+                    <p>Favorites</p>
+                </div>
+            </div>
+
+            <!-- Favorites Section -->
+            <div class="favorites-section">
+                <h3><i class="fas fa-star"></i> Favorite Jokes</h3>
+                <div id="favoritesList" class="favorites-list">
+                    <p class="no-favorites">No favorites yet. Click on a joke to add it!</p>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="history-section">
+                <h3><i class="fas fa-history"></i> Recent Jokes</h3>
+                <div id="historyList" class="history-list">
+                    <p class="no-history">No history yet.</p>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings-section">
+                <h3><i class="fas fa-cog"></i> Settings</h3>
+                <div class="settings-options">
+                    <label class="setting-item">
+                        <input type="checkbox" id="safeMode" checked>
+                        <span>Safe Mode (No Offensive Jokes)</span>
+                    </label>
+                    <label class="setting-item">
+                        <input type="checkbox" id="darkMode">
+                        <span>Dark Mode</span>
+                    </label>
+                    <button id="clearAllBtn" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Clear All Data
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="joke-script.js"></script>
+</body>
+</html>
